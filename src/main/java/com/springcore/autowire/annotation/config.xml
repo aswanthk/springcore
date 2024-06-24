@@ -9,21 +9,19 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+        
+     <context:annotation-config />
 
-	<!-- <context:annotation-config /> -->
-
-<!-- 	<bean class="com.springcore.lifecycle.Pizza" name="pizza" init-method="hey" destroy-method="bye" >
-		<property name="prize" value="40" />
+	<bean class="com.springcore.autowire.annotation.Address" name="temp1">
+		<property name="street" value="First Street" />
+		<property name="city" value="First City" />
 	</bean>
 	
-	<bean class="com.springcore.lifecycle.Pepsi" name="pepsi">
-		<property name="prize" value="15"></property>
-	</bean> -->
-	
-	<bean class="com.springcore.lifecycle.MineralWater" name="water">
-		<property name="prize" value="0" />
+	<bean class="com.springcore.autowire.annotation.Address" name="temp2">
+		<property name="street" value="Second Street" />
+		<property name="city" value="Second City" />
 	</bean>
 	
-	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+	<bean class="com.springcore.autowire.annotation.Emp" name="emp1" />
 
 </beans>
