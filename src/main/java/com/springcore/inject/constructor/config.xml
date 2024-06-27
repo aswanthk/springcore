@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+<!--      <bean class="com.springcore.inject.constructor.User" name="user1">
+     	<constructor-arg value="Peter" index="0" />
+     	<constructor-arg value="24" type="int" index="1" />
+     	<constructor-arg value="USA" index="2" />
+     </bean> -->
+     
+     <bean class="com.springcore.inject.constructor.User" name="user1" c:username="Peter" c:age="24" c:country="USA"/>
+     
+
+<!-- 	<bean class="com.springcore.inject.constructor.Facebook" name="facebook">
+		<constructor-arg>
+			<ref bean="user1" />
+		</constructor-arg>
+		<constructor-arg ref="user1" />
+	</bean> -->
+	
+	<bean class="com.springcore.inject.constructor.Facebook" name="facebook" c:user-ref="user1" />
+
+</beans>
